@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://buo62px8w6bqn"]
+[gd_scene load_steps=12 format=4 uid="uid://buo62px8w6bqn"]
 
 [ext_resource type="Texture2D" uid="uid://836f8js3awxu" path="res://Assets/Sprites/Scenario/kenney_pixel-platformer/Tilemap/tilemap_packed.png" id="1_7p6j4"]
 [ext_resource type="Texture2D" uid="uid://b3qyjjy1woj5y" path="res://Assets/Sprites/Backgrounds/BGs/nature_3/origbig.png" id="1_8ffim"]
 [ext_resource type="PackedScene" uid="uid://cfrjj0ewas1kd" path="res://Scenes/player_1.tscn" id="2_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://b6oais285ridb" path="res://Scenes/player_2.tscn" id="3_xfk5q"]
+[ext_resource type="Script" uid="uid://56sfq11nmi2n" path="res://Scenes/buttons.gd" id="5_6444e"]
+[ext_resource type="Texture2D" uid="uid://gq05nddkxcn0" path="res://Assets/Sprites/Scenario/kenney_pixel-platformer/Tiles/tile_0108.png" id="6_evi0p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6444e"]
 texture = ExtResource("1_7p6j4")
@@ -200,6 +202,16 @@ tile_size = Vector2i(18, 18)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_6444e")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsmp6"]
+
+[sub_resource type="Animation" id="Animation_evi0p"]
+resource_name = "Press"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lsmp6"]
+_data = {
+&"Press": SubResource("Animation_evi0p")
+}
+
 [node name="Level1" type="Node2D"]
 position = Vector2(4, 11)
 
@@ -207,7 +219,7 @@ position = Vector2(4, 11)
 tile_set = SubResource("TileSet_evi0p")
 format = 2
 
-[node name="Layer0" type="TileMapLayer" parent="TileMap"]
+[node name="Layer1" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
 position = Vector2(1, -3)
 tile_map_data = PackedByteArray("AADi//H/AQACAAAAAADj//H/AQACAAAAAADk//H/AQACAAAAAADl//H/AQACAAAAAADh//H/AQACAAAAAADg//H/AQABAAAAAAAfAPP/AQADAAAAAAAeAPP/AQACAAAAAAAdAPP/AQACAAAAAAAcAPP/AQACAAAAAAAbAPP/AQACAAAAAAAaAPP/AQACAAAAAADm//H/AQACAAAAAADn//H/AQACAAAAAADo//H/AQACAAAAAADp//H/AQACAAAAAADq//H/AQACAAAAAADr//H/AQACAAAAAADs//H/AQACAAAAAADg/+3/AQAIAAIAAADh/+3/AQAJAAIAAADi/+3/AQAJAAIAAADj/+3/AQAJAAIAAADk/+3/AQAJAAIAAADl/+3/AQAJAAIAAADm/+3/AQAJAAIAAADn/+3/AQAJAAIAAADo/+3/AQAJAAIAAADp/+3/AQAJAAIAAADq/+3/AQAJAAIAAADr/+3/AQAJAAIAAADs/+3/AQAJAAIAAADt/+3/AQAJAAIAAADu/+3/AQAJAAIAAADv/+3/AQAJAAIAAADw/+3/AQAJAAIAAADx/+3/AQAJAAIAAADy/+3/AQAJAAIAAADz/+3/AQAJAAIAAAD0/+3/AQAJAAIAAAD1/+3/AQAJAAIAAAD2/+3/AQAJAAIAAAD3/+3/AQAJAAIAAAD4/+3/AQAJAAIAAAD5/+3/AQAJAAIAAAD6/+3/AQAJAAIAAAD7/+3/AQAJAAIAAAD8/+3/AQAJAAIAAAD9/+3/AQAJAAIAAAD+/+3/AQAJAAIAAAD//+3/AQAJAAIAAAAAAO3/AQAJAAIAAAABAO3/AQAJAAIAAAACAO3/AQAJAAIAAAADAO3/AQAJAAIAAAAEAO3/AQAJAAIAAAAFAO3/AQAJAAIAAAAGAO3/AQAJAAIAAAAHAO3/AQAJAAIAAAAIAO3/AQAJAAIAAAAJAO3/AQAJAAIAAAAKAO3/AQAJAAIAAAALAO3/AQAJAAIAAAAMAO3/AQAJAAIAAAANAO3/AQAJAAIAAAAOAO3/AQAJAAIAAAAPAO3/AQAJAAIAAAAQAO3/AQAJAAIAAAARAO3/AQAJAAIAAAASAO3/AQAJAAIAAAATAO3/AQAJAAIAAAAUAO3/AQAJAAIAAAAVAO3/AQAJAAIAAAAWAO3/AQAJAAIAAAAXAO3/AQAJAAIAAAAYAO3/AQAJAAIAAAAZAO3/AQAJAAIAAAAaAO3/AQAJAAIAAAAbAO3/AQAJAAIAAAAcAO3/AQAJAAIAAAAdAO3/AQAJAAIAAAAeAO3/AQAJAAIAAAAfAO3/AQAKAAIAAADt//H/AQACAAAAAADu//H/AQACAAAAAADv//H/AQACAAAAAADw//H/AQACAAAAAADx//H/AQACAAAAAADy//H/AQADAAAAAAAXAPP/AQACAAAAAAAWAPP/AQACAAAAAAAVAPP/AQACAAAAAAAUAPP/AQACAAAAAAATAPP/AQABAAAAAAAfAPj/AQADAAAAAAAeAPj/AQACAAAAAAAdAPj/AQACAAAAAAAcAPj/AQACAAAAAAAbAPj/AQACAAAAAAAaAPj/AQACAAAAAAAZAPj/AQACAAAAAAAYAPj/AQACAAAAAAAXAPj/AQACAAAAAAAWAPj/AQACAAAAAAAVAPj/AQACAAAAAAAUAPj/AQACAAAAAAATAPj/AQACAAAAAAASAPj/AQACAAAAAAARAPj/AQACAAAAAAAQAPj/AQACAAAAAAAPAPj/AQACAAAAAAAOAPj/AQACAAAAAAANAPj/AQACAAAAAAAMAPj/AQACAAAAAAALAPj/AQACAAAAAAAKAPj/AQACAAAAAAAJAPj/AQACAAAAAAAIAPj/AQACAAAAAAAHAPj/AQACAAAAAAAGAPj/AQACAAAAAAAFAPj/AQACAAAAAAAEAPj/AQACAAAAAAADAPj/AQACAAAAAAACAPj/AQACAAAAAAABAPj/AQACAAAAAAAAAPj/AQACAAAAAAD///j/AQACAAAAAAD+//j/AQACAAAAAAD9//j/AQACAAAAAAD8//j/AQACAAAAAAD7//j/AQACAAAAAAD6//j/AQACAAAAAAD5//j/AQACAAAAAAD4//j/AQACAAAAAAD3//j/AQACAAAAAAD2//j/AQACAAAAAAD1//j/AQACAAAAAAD0//j/AQACAAAAAADz//j/AQACAAAAAADy//j/AQACAAAAAADx//j/AQACAAAAAADw//j/AQACAAAAAADv//j/AQACAAAAAADu//j/AQACAAAAAADt//j/AQACAAAAAADs//j/AQACAAAAAADr//j/AQACAAAAAADq//j/AQACAAAAAADp//j/AQACAAAAAADo//j/AQACAAAAAADn//j/AQACAAAAAADm//j/AQACAAAAAADl//j/AQABAAAAAAAYAPP/AQACAAAAAAAZAPP/AQACAAAAAAA=")
@@ -229,6 +241,22 @@ position = Vector2(-552, -301)
 position = Vector2(542, -259)
 
 [node name="Buttons" type="Node2D" parent="."]
+script = ExtResource("5_6444e")
+
+[node name="Area2D" type="Area2D" parent="Buttons"]
+position = Vector2(-326, -280)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Area2D"]
+shape = SubResource("RectangleShape2D_lsmp6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Buttons/Area2D"]
+texture = ExtResource("6_evi0p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons"]
+root_node = NodePath("../Area2D")
+libraries = {
+&"": SubResource("AnimationLibrary_lsmp6")
+}
 
 [node name="Doors" type="Node2D" parent="."]
 
@@ -236,7 +264,13 @@ position = Vector2(542, -259)
 
 [node name="Hazards" type="Node2D" parent="."]
 
-[node name="Platforms" type="Node2D" parent="."]
+[node name="Platforms" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 2)
