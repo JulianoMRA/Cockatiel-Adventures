@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfrjj0ewas1kd"]
+[gd_scene load_steps=12 format=3 uid="uid://cfrjj0ewas1kd"]
 
 [ext_resource type="Texture2D" uid="uid://c1lsvsqtjfd7h" path="res://Assets/Sprites/Calopsitas/Cockatiel 1.png" id="1_2mvbs"]
 [ext_resource type="Script" uid="uid://bmnx5lapxfwuv" path="res://Scripts/player_1.gd" id="1_tmdyv"]
+[ext_resource type="Texture2D" uid="uid://cy4rhg6x7byqu" path="res://Assets/Sprites/Calopsitas/Cockatiel 2-Sheet.png" id="3_p0e4v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tmdyv"]
 atlas = ExtResource("1_2mvbs")
@@ -13,6 +14,18 @@ region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4k0l"]
 atlas = ExtResource("1_2mvbs")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0kdt"]
+atlas = ExtResource("3_p0e4v")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eus2p"]
+atlas = ExtResource("3_p0e4v")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cafw"]
+atlas = ExtResource("3_p0e4v")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aatkl"]
@@ -32,6 +45,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0kdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eus2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0kdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cafw")
+}],
+"loop": true,
+"name": &"Idle2",
 "speed": 5.0
 }, {
 "frames": [],
