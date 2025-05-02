@@ -1,0 +1,30 @@
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://dsp3orbo0pdy5"]
+
+[ext_resource type="Texture2D" uid="uid://dxq65e0c822e7" path="res://Assets/Sprites/Scenario/kenney_pixel-platformer/Tiles/tile_0001.png" id="1_dcfut"]
+[ext_resource type="Texture2D" uid="uid://bqo3roocf1ipl" path="res://Assets/Sprites/Scenario/kenney_pixel-platformer/Tiles/tile_0002.png" id="2_ud0qn"]
+[ext_resource type="Texture2D" uid="uid://b511swpp1dn0q" path="res://Assets/Sprites/Scenario/kenney_pixel-platformer/Tiles/tile_0003.png" id="3_njl1h"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v3l14"]
+resource_name = "Esquerda"
+texture = ExtResource("1_dcfut")
+texture_region_size = Vector2i(18, 18)
+0:0/next_alternative_id = 3
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdrgo"]
+resource_name = "Meio"
+texture = ExtResource("2_ud0qn")
+texture_region_size = Vector2i(18, 18)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_utmar"]
+resource_name = "Direita"
+texture = ExtResource("3_njl1h")
+texture_region_size = Vector2i(18, 18)
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(18, 18)
+sources/4 = SubResource("TileSetAtlasSource_v3l14")
+sources/5 = SubResource("TileSetAtlasSource_kdrgo")
+sources/6 = SubResource("TileSetAtlasSource_utmar")

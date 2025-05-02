@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dprbg385uwe1c"]
+
+[ext_resource type="Texture2D" uid="uid://dcdjegqox30lo" path="res://Assets/Sprites/Scenario/kenney_pixel-platformer/Tiles/tile_0000.png" id="1_jkjiw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p6j4"]
+
+[node name="Chão01" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jkjiw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_7p6j4")

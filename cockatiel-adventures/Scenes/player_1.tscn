@@ -83,5 +83,3 @@ animation = &"Idle1"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.5, -3)
 shape = SubResource("RectangleShape2D_tmdyv")
-
-[node name="Camera2D" type="Camera2D" parent="."]
