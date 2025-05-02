@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://cfrjj0ewas1kd"]
+
+[ext_resource type="Texture2D" uid="uid://c1lsvsqtjfd7h" path="res://Assets/Sprites/Calopsitas/Cockatiel 1.png" id="1_2mvbs"]
+[ext_resource type="Script" uid="uid://bmnx5lapxfwuv" path="res://Scripts/player_1.gd" id="1_tmdyv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmdyv"]
+atlas = ExtResource("1_2mvbs")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0e4v"]
+atlas = ExtResource("1_2mvbs")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4k0l"]
+atlas = ExtResource("1_2mvbs")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aatkl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmdyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0e4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmdyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4k0l")
+}],
+"loop": true,
+"name": &"Idle1",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmdyv"]
+size = Vector2(23, 26)
+
+[node name="Player 1" type="CharacterBody2D"]
+script = ExtResource("1_tmdyv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_aatkl")
+animation = &"Idle1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -3)
+shape = SubResource("RectangleShape2D_tmdyv")
+
+[node name="Camera2D" type="Camera2D" parent="."]

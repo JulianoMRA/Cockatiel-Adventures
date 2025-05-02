@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://buo62px8w6bqn"]
+
+[ext_resource type="Texture2D" uid="uid://b3qyjjy1woj5y" path="res://Assets/Sprites/Backgrounds/BGs/nature_3/origbig.png" id="1_8ffim"]
+[ext_resource type="PackedScene" uid="uid://cfrjj0ewas1kd" path="res://Scenes/player_1.tscn" id="2_xfk5q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ffim"]
+size = Vector2(998, 20)
+
+[node name="Level1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8ffim")
+
+[node name="Player 1" parent="." instance=ExtResource("2_xfk5q")]
+
+[node name="Chão" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chão"]
+position = Vector2(1, 57)
+shape = SubResource("RectangleShape2D_8ffim")
+
+[node name="Sprite2D" type="Sprite2D" parent="Chão"]
