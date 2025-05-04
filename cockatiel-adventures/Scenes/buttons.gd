@@ -10,8 +10,8 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name.begins_with("Player"):
-		animation_player.play("press")
+		animation_player.play("Press")
 
 func _on_body_exited(body):
 	if body.name.begins_with("Player"):
-		animation_player.play("release")
+		animation_player.play("Release")
