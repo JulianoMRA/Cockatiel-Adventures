@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://uyd1ndylgo74"]
+
+[ext_resource type="Script" uid="uid://bb5b6yddp0bt5" path="res://Scenes/seed.gd" id="1_arhpd"]
+[ext_resource type="Texture2D" uid="uid://cvwuqr55fecf4" path="res://Assets/Sprites/Calopsitas/Seed-Sheet.png" id="1_h627t"]
+[ext_resource type="AudioStream" uid="uid://dwmt8qudxtqgb" path="res://Assets/Audio/Collecting Sound.mp3" id="3_nwbkr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arhpd"]
+atlas = ExtResource("1_h627t")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwbkr"]
+atlas = ExtResource("1_h627t")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jya8j"]
+atlas = ExtResource("1_h627t")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7eo7"]
+atlas = ExtResource("1_h627t")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qn8ul"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arhpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwbkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jya8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7eo7")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l7s7a"]
+radius = 6.0
+height = 12.0
+
+[node name="Seed" type="Area2D"]
+script = ExtResource("1_arhpd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qn8ul")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_l7s7a")
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_nwbkr")
