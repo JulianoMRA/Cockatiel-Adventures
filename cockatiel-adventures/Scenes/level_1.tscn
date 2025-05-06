@@ -1,8 +1,9 @@
-[gd_scene load_steps=30 format=4 uid="uid://buo62px8w6bqn"]
+[gd_scene load_steps=31 format=4 uid="uid://buo62px8w6bqn"]
 
 [ext_resource type="Texture2D" uid="uid://836f8js3awxu" path="res://Assets/Sprites/Scenario/kenney_pixel-platformer/Tilemap/tilemap_packed.png" id="1_7p6j4"]
 [ext_resource type="Texture2D" uid="uid://b3qyjjy1woj5y" path="res://Assets/Sprites/Backgrounds/BGs/nature_3/origbig.png" id="1_8ffim"]
 [ext_resource type="AudioStream" uid="uid://hswhouh321qe" path="res://Assets/Audio/Soundtrack 01.mp3" id="1_chwpn"]
+[ext_resource type="PackedScene" uid="uid://8b1n5hegbnq6" path="res://Scenes/HUD.tscn" id="1_uy8f0"]
 [ext_resource type="PackedScene" uid="uid://cfrjj0ewas1kd" path="res://Scenes/player_1.tscn" id="2_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://b6oais285ridb" path="res://Scenes/player_2.tscn" id="3_xfk5q"]
 [ext_resource type="Texture2D" uid="uid://gq05nddkxcn0" path="res://Assets/Sprites/Scenario/kenney_pixel-platformer/Tiles/tile_0108.png" id="6_evi0p"]
@@ -189,15 +190,25 @@ texture_region_size = Vector2i(18, 18)
 7:8/0 = 0
 8:8/0 = 0
 9:8/0 = 0
+10:8/next_alternative_id = 2
 10:8/0 = 0
+11:8/next_alternative_id = 2
 11:8/0 = 0
+12:8/next_alternative_id = 2
 12:8/0 = 0
+13:8/next_alternative_id = 2
 13:8/0 = 0
+14:8/next_alternative_id = 2
 14:8/0 = 0
+15:8/next_alternative_id = 2
 15:8/0 = 0
+16:8/next_alternative_id = 2
 16:8/0 = 0
+17:8/next_alternative_id = 2
 17:8/0 = 0
+18:8/next_alternative_id = 2
 18:8/0 = 0
+19:8/next_alternative_id = 2
 19:8/0 = 0
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
@@ -339,6 +350,8 @@ animations = [{
 }]
 
 [node name="Level1" type="Node2D"]
+
+[node name="HUD" parent="." instance=ExtResource("1_uy8f0")]
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_chwpn")

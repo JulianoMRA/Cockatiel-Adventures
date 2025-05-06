@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://8b1n5hegbnq6"]
+
+[ext_resource type="Script" uid="uid://da4o862ilgeh1" path="res://Scenes/hud.gd" id="1_jo1ms"]
+[ext_resource type="Texture2D" uid="uid://bcunhhf37hb3k" path="res://number0.tres" id="2_c3eba"]
+[ext_resource type="Texture2D" uid="uid://p0hm41mef3kv" path="res://Assets/Sprites/Calopsitas/Seed18.png" id="3_g8s2e"]
+[ext_resource type="Texture2D" uid="uid://c22gxcvd10pdw" path="res://bar.tres" id="4_t385i"]
+[ext_resource type="Texture2D" uid="uid://d3w8wiibovph" path="res://number9.tres" id="5_nfm57"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_jo1ms")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(64, 32)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_right = 42.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Digit1" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_c3eba")
+stretch_mode = 2
+
+[node name="Bar" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_t385i")
+stretch_mode = 2
+
+[node name="9" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_nfm57")
+stretch_mode = 2
+
+[node name="Seed" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_g8s2e")
+stretch_mode = 2

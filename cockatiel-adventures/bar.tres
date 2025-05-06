@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://c22gxcvd10pdw"]
+
+[ext_resource type="Texture2D" uid="uid://b40iifgkq33kf" path="res://Assets/Sprites/Scenario/kenney_pixel-platformer/Tilemap/bar.png" id="1_irnhb"]
+
+[resource]
+atlas = ExtResource("1_irnhb")
+region = Rect2(0, 0, 18, 18)
