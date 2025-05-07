@@ -33,14 +33,17 @@ func _on_body_entered(body):
 	platform.get_node("Sprite2D").visible = false
 	platform.get_node("AnimatedSprite2D").visible = true
 	platform.get_node("AnimatedSprite2D").play("Desativando")
-
 	await platform.get_node("AnimatedSprite2D").animation_finished
-	platform.get_node("CollisionShape2D").disabled = true
 
+	platform.get_node("CollisionShape2D").disabled = true
 	is_animating = false
 
 func _on_body_exited(body):
-	if is_animating:
+	# Aguarda a próxima frame para garantir que todos os corpos já saíram
+	await get_tree().process_frame
+
+	# Verifica se ainda há algum corpo dentro
+	if get_overlapping_bodies().size() > 0:
 		return
 
 	_is_pressed = false
@@ -55,5 +58,4 @@ func _on_body_exited(body):
 	platform.get_node("AnimatedSprite2D").visible = false
 	platform.get_node("Sprite2D").visible = true
 	platform.get_node("CollisionShape2D").disabled = false
-
 	is_animating = false

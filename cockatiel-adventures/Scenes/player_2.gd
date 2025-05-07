@@ -18,8 +18,9 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+	# Animação
 	if direction != 0:
-		sprite.play("walk")
+		sprite.play("Walk2")
 		sprite.flip_h = direction < 0
 	else:
-		sprite.play("Idle2")
+		sprite.play("Idle2") # <-- certifique-se que o nome no editor é "idle"

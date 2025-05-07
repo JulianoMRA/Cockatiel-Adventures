@@ -14,11 +14,6 @@ func _on_body_entered(body):
 		anim.visible = false
 		collision.disabled = true
 
-		# Atualiza o contador da HUD
-		var hud = get_tree().current_scene.get_node("HUD")
-		hud.update_seed_count(hud.collected + 1)
-
-		# Toca o som e libera o nó depois
 		pickup_sound.play()
 		await pickup_sound.finished
 		queue_free()
