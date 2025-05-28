@@ -1,6 +1,5 @@
 extends Area2D
 
-@onready var anim = $AnimationPlayer
 @export var target_platform: NodePath
 
 var _is_pressed = false
@@ -8,8 +7,6 @@ var is_animating = false
 var _should_release_after_anim = false
 
 func _ready():
-	anim.play("Release")
-
 	var platform = get_node(target_platform)
 	platform.get_node("AnimatedSprite2D").visible = false
 	platform.get_node("Sprite2D").visible = true
@@ -28,7 +25,6 @@ func _on_body_entered(body):
 	_is_pressed = true
 	is_animating = true
 
-	anim.play("Press")
 	var platform = get_node(target_platform)
 
 	platform.get_node("Sprite2D").visible = false
@@ -53,7 +49,6 @@ func _on_body_exited(body):
 	_is_pressed = false
 	is_animating = true
 
-	anim.play("Release")
 	var platform = get_node(target_platform)
 
 	platform.get_node("AnimatedSprite2D").play("Ativando")
