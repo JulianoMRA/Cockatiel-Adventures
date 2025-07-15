@@ -40,7 +40,7 @@ func _on_body_entered(body):
 		_should_release_after_anim = false
 		_on_body_exited(body)
 
-func _on_body_exited(body):
+func _on_body_exited(_body):
 	await get_tree().process_frame
 	# Só desativa se não houver mais jogadores
 	if get_overlapping_bodies().any(_is_body_player):

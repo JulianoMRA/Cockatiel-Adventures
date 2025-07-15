@@ -1,20 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://b6oais285ridb"]
+[gd_scene load_steps=14 format=3 uid="uid://b6oais285ridb"]
 
 [ext_resource type="Script" uid="uid://cj0wcul38pgk6" path="res://Scenes/player_2.gd" id="1_a3adp"]
-[ext_resource type="Texture2D" uid="uid://c1lsvsqtjfd7h" path="res://Assets/Sprites/Calopsitas/Cockatiel 1.png" id="2_a3adp"]
 [ext_resource type="Texture2D" uid="uid://cy4rhg6x7byqu" path="res://Assets/Sprites/Calopsitas/Cockatiel 2-Sheet.png" id="3_a3adp"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tmdyv"]
-atlas = ExtResource("2_a3adp")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p0e4v"]
-atlas = ExtResource("2_a3adp")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c4k0l"]
-atlas = ExtResource("2_a3adp")
-region = Rect2(128, 0, 64, 64)
+[ext_resource type="Texture2D" uid="uid://c8b2tnb3qhbr3" path="res://Assets/Sprites/Calopsitas/Cockatiel 2 Walk-Sheet.png" id="3_n0kdt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0kdt"]
 atlas = ExtResource("3_a3adp")
@@ -28,25 +16,28 @@ region = Rect2(64, 0, 64, 64)
 atlas = ExtResource("3_a3adp")
 region = Rect2(128, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4j3i"]
+atlas = ExtResource("3_n0kdt")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_et7db"]
+atlas = ExtResource("3_n0kdt")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_du3lb"]
+atlas = ExtResource("3_n0kdt")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kslfe"]
+atlas = ExtResource("3_n0kdt")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k46vw"]
+atlas = ExtResource("3_n0kdt")
+region = Rect2(256, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_aatkl"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tmdyv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p0e4v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tmdyv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c4k0l")
-}],
-"loop": true,
-"name": &"Idle1",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n0kdt")
@@ -62,6 +53,26 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4j3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_et7db")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du3lb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kslfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k46vw")
+}],
+"loop": true,
+"name": &"Walk2",
 "speed": 5.0
 }, {
 "frames": [],

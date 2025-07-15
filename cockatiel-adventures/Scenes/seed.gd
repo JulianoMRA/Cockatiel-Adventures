@@ -1,5 +1,7 @@
 extends Area2D
 
+signal collected
+
 @onready var anim = $AnimatedSprite2D
 @onready var pickup_sound = $PickupSound
 @onready var collision = $CollisionShape2D
@@ -10,10 +12,9 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name.begins_with("Player"):
-		# Esconde a semente e desabilita a colisão imediatamente
 		anim.visible = false
 		collision.disabled = true
-
+		emit_signal("collected")
 		pickup_sound.play()
 		await pickup_sound.finished
 		queue_free()
