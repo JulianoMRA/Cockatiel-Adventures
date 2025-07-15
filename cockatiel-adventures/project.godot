@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cockatiel Adventures"
-run/main_scene="uid://buo62px8w6bqn"
+run/main_scene="uid://c6d1stiuves05"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

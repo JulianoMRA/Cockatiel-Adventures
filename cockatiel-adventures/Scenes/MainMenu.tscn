@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6d1stiuves05"]
+
+[ext_resource type="Script" uid="uid://735s3p4tdfl5" path="res://Scenes/main_menu.gd" id="1_853f1"]
+[ext_resource type="Texture2D" uid="uid://n2qivt7agvym" path="res://Assets/Sprites/Backgrounds/BGs/nature_8/orig.png" id="2_853f1"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_853f1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -586.0
+offset_top = -334.0
+offset_right = 586.0
+offset_bottom = 334.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_853f1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = -50.5
+offset_right = 59.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Jogar"
+
+[node name="Config" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Configurações"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Sair"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Config" to="." method="_on_config_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
