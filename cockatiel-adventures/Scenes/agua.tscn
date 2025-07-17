@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtgepns8hrp0c"]
+
+[ext_resource type="Script" uid="uid://dokau2icntcj8" path="res://Scenes/agua.gd" id="1_6rwyg"]
+[ext_resource type="Texture2D" uid="uid://ddygwid4pxeqy" path="res://Assets/Sprites/Scenario/kenney_pixel-platformer/Tiles/tile_0033.png" id="1_rotcb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rwyg"]
+
+[node name="Agua" type="Area2D"]
+script = ExtResource("1_6rwyg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6rwyg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rotcb")

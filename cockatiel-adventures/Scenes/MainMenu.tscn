@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dj3lvsuarlkr8"]
 
 [ext_resource type="Script" uid="uid://bwy4e6bvi4o6q" path="res://Scenes/main_menu.gd" id="1_853f1"]
-[ext_resource type="Texture2D" uid="uid://d0xjc1rcexb3j" path="res://Assets/Sprites/Backgrounds/BGs/nature_8/origbig.png" id="2_853f1"]
+[ext_resource type="Texture2D" uid="uid://c2rsym6r4igom" path="res://Assets/Sprites/Backgrounds/BGs/nature_5/origbig.png" id="2_853f1"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -32,6 +32,7 @@ offset_bottom = 334.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_853f1")
+expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
