@@ -13,7 +13,7 @@ func _ready():
 func _on_body_entered(body):
 	if body.name.begins_with("Player"):
 		anim.visible = false
-		collision.call_deferred("set_disabled", true)
+		collision.disabled = true
 		emit_signal("collected")
 		pickup_sound.play()
 		await pickup_sound.finished
