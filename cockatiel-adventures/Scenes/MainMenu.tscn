@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dj3lvsuarlkr8"]
+[gd_scene load_steps=4 format=3 uid="uid://dj3lvsuarlkr8"]
 
 [ext_resource type="Script" uid="uid://bwy4e6bvi4o6q" path="res://Scenes/main_menu.gd" id="1_853f1"]
 [ext_resource type="Texture2D" uid="uid://c2rsym6r4igom" path="res://Assets/Sprites/Backgrounds/BGs/nature_5/origbig.png" id="2_853f1"]
+[ext_resource type="FontFile" uid="uid://d2l6gqmcrmgc5" path="res://Assets/Fonteds/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="3_8saeu"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -51,14 +52,17 @@ alignment = 1
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_8saeu")
 text = "Jogar"
 
 [node name="Config" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_8saeu")
 text = "Configurações"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_8saeu")
 text = "Sair"
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
