@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://iom2poynw350"]
+[gd_scene load_steps=4 format=3 uid="uid://d1eo4jf4q36gt"]
 
-[ext_resource type="Script" uid="uid://bln5gifqapedb" path="res://game_over.gd" id="1_40baj"]
-[ext_resource type="Texture2D" uid="uid://d0xjc1rcexb3j" path="res://Assets/Sprites/Backgrounds/BGs/nature_8/origbig.png" id="2_eksk4"]
-[ext_resource type="FontFile" uid="uid://d2l6gqmcrmgc5" path="res://Assets/Fonteds/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="3_xl4ts"]
+[ext_resource type="Texture2D" uid="uid://d0xjc1rcexb3j" path="res://Assets/Sprites/Backgrounds/BGs/nature_8/origbig.png" id="1_1xqjm"]
+[ext_resource type="Script" uid="uid://d036jofin4ufi" path="res://no_seed_game_over.gd" id="1_mf303"]
+[ext_resource type="FontFile" uid="uid://d2l6gqmcrmgc5" path="res://Assets/Fonteds/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="2_mf303"]
 
-[node name="GameOver" type="Control"]
+[node name="NoSeedGameOver" type="Control"]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 8
@@ -12,11 +12,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-script = ExtResource("1_40baj")
+script = ExtResource("1_mf303")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -31,11 +33,10 @@ offset_right = 586.0
 offset_bottom = 334.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_eksk4")
+texture = ExtResource("1_1xqjm")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-process_mode = 3
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -56,18 +57,18 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_xl4ts")
-text = "Você se afogou!
+theme_override_fonts/font = ExtResource("2_mf303")
+text = "Você não coletou todas as sementes!
 Tente Novamente."
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Restart" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_xl4ts")
+theme_override_fonts/font = ExtResource("2_mf303")
 text = "Recomeçar"
 
 [node name="Menu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_xl4ts")
+theme_override_fonts/font = ExtResource("2_mf303")
 text = "Voltar ao Menu"

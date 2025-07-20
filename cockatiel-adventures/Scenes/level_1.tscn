@@ -19,16 +19,26 @@ script/source = "extends Node2D
 
 @onready var game_over_screen = preload(\"res://GameOver.tscn\").instantiate()
 @onready var victory_scene = preload(\"res://Win.tscn\")
+@onready var no_seed_game_over_scene = preload(\"res://NoSeedGameOver.tscn\").instantiate()
 var players_at_port = []
+var seeds_collected = 0
+const TOTAL_SEEDS = 1
 
 func _ready():
 	$AreaAgua.body_entered.connect(_on_water_body_entered)
 	$AreaPorta.body_entered.connect(_on_porta_body_entered)
+	# Conecta o sinal de todas as sementes na cena (se estiverem em um grupo \"seed\")
+	for seeds in get_tree().get_nodes_in_group(\"Seeds\"):
+		seeds.connect(\"collected\", Callable(self, \"_on_seed_collected\"))
+		
+
+func _on_seed_collected():
+	seeds_collected += 1
 
 func _on_water_body_entered(body):
 	if body.name.begins_with(\"Player\"):
 		add_child(game_over_screen)
-		body.set_physics_process(false) # opcional: trava o player
+		body.set_physics_process(false) 
 
 func _on_porta_body_entered(body):
 	if body.name.begins_with(\"Player\"):
@@ -36,8 +46,15 @@ func _on_porta_body_entered(body):
 			players_at_port.append(body)
 			body.queue_free()
 		if players_at_port.size() == 2:
-			var victory_screen = victory_scene.instantiate()
-			add_child(victory_screen)
+			if seeds_collected == TOTAL_SEEDS:
+				var victory_screen = victory_scene.instantiate()
+				add_child(victory_screen)
+			else:
+				add_child(no_seed_game_over_scene)
+
+
+func _on_seed_1collected() -> void:
+	pass # Replace with function body.
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6444e"]
@@ -546,10 +563,10 @@ texture = ExtResource("1_8ffim")
 [node name="Players" type="Node2D" parent="."]
 
 [node name="Player 1" parent="Players" instance=ExtResource("2_xfk5q")]
-position = Vector2(302, 147)
+position = Vector2(320, 271)
 
 [node name="Player 2" parent="Players" instance=ExtResource("3_xfk5q")]
-position = Vector2(432, 62)
+position = Vector2(290, 263)
 
 [node name="Buttons" type="Node2D" parent="."]
 position = Vector2(0, 1)
@@ -1432,23 +1449,43 @@ position = Vector2(207, 297)
 position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_6ioyp")
 
+[connection signal="collected" from="Seeds/Seed" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed" to="HUD" method="add_seed"]
+[connection signal="collected" from="Seeds/Seed2" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed2" to="HUD" method="add_seed"]
+[connection signal="collected" from="Seeds/Seed3" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed3" to="HUD" method="add_seed"]
+[connection signal="collected" from="Seeds/Seed4" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed4" to="HUD" method="add_seed"]
+[connection signal="collected" from="Seeds/Seed5" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed5" to="HUD" method="add_seed"]
+[connection signal="collected" from="Seeds/Seed6" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed6" to="HUD" method="add_seed"]
+[connection signal="collected" from="Seeds/Seed7" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed7" to="HUD" method="add_seed"]
+[connection signal="collected" from="Seeds/Seed8" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed8" to="HUD" method="add_seed"]
+[connection signal="collected" from="Seeds/Seed9" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed9" to="HUD" method="add_seed"]
+[connection signal="collected" from="Seeds/Seed10" to="." method="_on_seed_1collected"]
 [connection signal="collected" from="Seeds/Seed10" to="HUD" method="add_seed"]
+[connection signal="collected" from="Seeds/Seed11" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed11" to="HUD" method="add_seed"]
+[connection signal="collected" from="Seeds/Seed12" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed12" to="HUD" method="add_seed"]
+[connection signal="collected" from="Seeds/Seed13" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed13" to="HUD" method="add_seed"]
+[connection signal="collected" from="Seeds/Seed14" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed14" to="HUD" method="add_seed"]
+[connection signal="collected" from="Seeds/Seed15" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed15" to="HUD" method="add_seed"]
+[connection signal="collected" from="Seeds/Seed16" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed16" to="HUD" method="add_seed"]
+[connection signal="collected" from="Seeds/Seed17" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed17" to="HUD" method="add_seed"]
+[connection signal="collected" from="Seeds/Seed18" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed18" to="HUD" method="add_seed"]
+[connection signal="collected" from="Seeds/Seed19" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed19" to="HUD" method="add_seed"]
+[connection signal="collected" from="Seeds/Seed20" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed20" to="HUD" method="add_seed"]
