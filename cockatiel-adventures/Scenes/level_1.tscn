@@ -530,7 +530,7 @@ text = "Sementes Coletadas:"
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_chwpn")
-volume_db = -25.0
+volume_db = -20.0
 autoplay = true
 
 [node name="Layer1" type="TileMapLayer" parent="."]
