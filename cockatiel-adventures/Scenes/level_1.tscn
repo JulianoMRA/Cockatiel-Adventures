@@ -22,7 +22,7 @@ script/source = "extends Node2D
 @onready var no_seed_game_over_scene = preload(\"res://NoSeedGameOver.tscn\").instantiate()
 var players_at_port = []
 var seeds_collected = 0
-const TOTAL_SEEDS = 1
+const TOTAL_SEEDS = 20
 
 func _ready():
 	$AreaAgua.body_entered.connect(_on_water_body_entered)
