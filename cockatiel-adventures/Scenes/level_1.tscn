@@ -51,10 +51,6 @@ func _on_porta_body_entered(body):
 				add_child(victory_screen)
 			else:
 				add_child(no_seed_game_over_scene)
-
-
-func _on_seed_1collected() -> void:
-	pass # Replace with function body.
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6444e"]
@@ -562,13 +558,16 @@ z_index = -1
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_8ffim")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 2)
+
 [node name="Players" type="Node2D" parent="."]
 
 [node name="Player 1" parent="Players" instance=ExtResource("2_xfk5q")]
 position = Vector2(-546, -294)
 
 [node name="Player 2" parent="Players" instance=ExtResource("3_xfk5q")]
-position = Vector2(286, -44)
+position = Vector2(528, -293)
 
 [node name="Buttons" type="Node2D" parent="."]
 position = Vector2(0, 1)
@@ -1365,9 +1364,6 @@ animation = &"Ativando"
 position = Vector2(0, -9)
 texture = ExtResource("8_chwpn")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, 2)
-
 [node name="Seeds" type="Node2D" parent="."]
 
 [node name="Seed" parent="Seeds" instance=ExtResource("11_af3po")]
@@ -1469,7 +1465,7 @@ shape = SubResource("RectangleShape2D_6ioyp")
 [connection signal="collected" from="Seeds/Seed8" to="HUD" method="add_seed"]
 [connection signal="collected" from="Seeds/Seed9" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed9" to="HUD" method="add_seed"]
-[connection signal="collected" from="Seeds/Seed10" to="." method="_on_seed_1collected"]
+[connection signal="collected" from="Seeds/Seed10" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed10" to="HUD" method="add_seed"]
 [connection signal="collected" from="Seeds/Seed11" to="." method="_on_seed_collected"]
 [connection signal="collected" from="Seeds/Seed11" to="HUD" method="add_seed"]

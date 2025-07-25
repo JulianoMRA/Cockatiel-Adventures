@@ -69,9 +69,11 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_vs51u")
 text = "1. Vocês devem coletar todas as sementes antes de completarem a fase, caso contrário, a fase não será concluída! Não esqueça de nenhuma!
 
-2. Evite a água! Calopsitas não sabem nadar!
+2. Para garantir o acionamento dos botões e, assim, garantir a abertura das portas, os players devem permanecer em cima dos botões para mantê-los ativados. Dica: os botões possuem um cooldown de 1 segundo!
 
-3. Divirtam-se!!!
+3. Evite a água! Calopsitas não sabem nadar!
+
+4. Divirtam-se!!!
 
 "
 fit_content = true
