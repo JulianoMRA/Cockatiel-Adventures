@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://40oi3tw5c4gg" path="res://Assets/Sprites/Backgrounds/BGs/nature_7/origbig.png" id="1_co8qc"]
 [ext_resource type="Script" uid="uid://bxebvwiawrysm" path="res://win.gd" id="1_j64cp"]
 [ext_resource type="FontFile" uid="uid://d2l6gqmcrmgc5" path="res://Assets/Fonteds/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="2_j64cp"]
-[ext_resource type="AudioStream" uid="uid://d1vw4fw8prd3p" path="res://Assets/Audio/Sonic 3 And Knuckles OST - S&K Credits.mp3" id="4_ijtj1"]
+[ext_resource type="AudioStream" uid="uid://jhy7pqwmix6e" path="res://Assets/Audio/Win Song.mp3" id="4_ijtj1"]
 
 [node name="Win" type="Control"]
 process_mode = 3

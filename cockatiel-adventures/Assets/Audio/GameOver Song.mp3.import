@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wmrf2gkil247"
+path="res://.godot/imported/GameOver Song.mp3-1bf8d1e82962aba9f280e916c7557c34.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/GameOver Song.mp3"
+dest_files=["res://.godot/imported/GameOver Song.mp3-1bf8d1e82962aba9f280e916c7557c34.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

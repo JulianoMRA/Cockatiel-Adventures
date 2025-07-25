@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1eo4jf4q36gt"]
+[gd_scene load_steps=5 format=3 uid="uid://d1eo4jf4q36gt"]
 
 [ext_resource type="Texture2D" uid="uid://d0xjc1rcexb3j" path="res://Assets/Sprites/Backgrounds/BGs/nature_8/origbig.png" id="1_1xqjm"]
 [ext_resource type="Script" uid="uid://d036jofin4ufi" path="res://no_seed_game_over.gd" id="1_mf303"]
 [ext_resource type="FontFile" uid="uid://d2l6gqmcrmgc5" path="res://Assets/Fonteds/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="2_mf303"]
+[ext_resource type="AudioStream" uid="uid://wmrf2gkil247" path="res://Assets/Audio/GameOver Song.mp3" id="4_lxjcy"]
 
 [node name="NoSeedGameOver" type="Control"]
 process_mode = 3
@@ -72,3 +73,7 @@ text = "Recomeçar"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_mf303")
 text = "Voltar ao Menu"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_lxjcy")
+autoplay = true
